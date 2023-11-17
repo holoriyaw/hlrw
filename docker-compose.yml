@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx
+      ports:
+        - "8080:80"
+      restart: 
+        always
+  cadvisor:
+    image: google/cadvisor
+      ports:
+        - "8081:80"
+      restart: 
+        always
+    

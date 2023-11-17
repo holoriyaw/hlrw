@@ -1,0 +1,19 @@
+[RedHat-webservers]
+webserver1 ansible_host=192.106.84.74 
+webserver2 ansible_host=192.106.5.244 
+
+[RedHat-webservers:vars]
+ansible_user=user 
+ansible_ssh_private_key_file=/home/user/.ssh/id_rsa
+
+[Debian-webservers]
+webserver3 ansible_host=192.106.47.241 ansible_user=user ansible_ssh_privete_key_file=/home/user/.ssh/id_rsa
+webserver4 ansible_host=192.106.168.233 ansible_user=user ansible_ssh_privete_key_file=/home/user/.ssh/id_rsa
+
+[Debian-webservers:vars]
+ansible_user=user 
+ansible_ssh_private_key_file=/home/user/.ssh/id_rsa
+
+[All-webservers:children]
+RedHat-webservers
+Debian-webservers
